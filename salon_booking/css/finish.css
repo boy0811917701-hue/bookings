@@ -1,0 +1,95 @@
+
+body{
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: #f5f3ef;
+    margin: 0;
+}
+
+/* กล่องหลัก */
+.container{
+    max-width: 1200px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+h2{
+    margin-bottom: 20px;
+    color: #333;
+    border-left: 5px solid #b57edc;
+    padding-left: 12px;
+}
+
+/* ตาราง */
+.booking-table{
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+}
+
+.booking-table thead{
+    background-color: #6f4e37;
+    color: #fff;
+}
+
+.booking-table th,
+.booking-table td{
+    padding: 14px 12px;
+    text-align: center;
+}
+
+.booking-table th{
+    font-weight: 600;
+}
+
+.booking-table tbody tr{
+    border-bottom: 1px solid #eee;
+    transition: background 0.2s ease;
+}
+
+.booking-table tbody tr:hover{
+    background: #f9f5ff;
+}
+
+/* badge สถานะ */
+.status-badge{
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+/* สถานะต่าง ๆ */
+.status-pending{
+    background: #ffeaa7;
+    color: #6c5b00;
+}
+
+.status-completed{
+    background: #55efc4;
+    color: #006b4f;
+}
+
+.status-cancelled{
+    background: #ff7675;
+    color: #fff;
+}
+
+/* ปุ่มแก้ไข */
+.action-link{
+    padding: 6px 14px;
+    background: #6c5ce7;
+    color: #fff !important;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 13px;
+    transition: 0.2s;
+}
+
+.action-link:hover{
+    background: #4834d4;
+}
+

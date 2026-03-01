@@ -1,0 +1,203 @@
+/* การตั้งค่าพื้นฐาน */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Prompt', sans-serif; 
+}
+
+:root {
+    --gold: #d4af37;
+    --gold-light: #f5e6c8;
+    --dark-bg: #0f0f0f;
+    --transition: 0.3s ease-in-out;
+}
+
+.header {
+    background: linear-gradient(90deg, #0f0f0f, #2b1d14, #000);
+    border-bottom: 2px solid var(--gold);
+    position: sticky; 
+    top: 0; 
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.header-content {
+    max-width: 1200px; 
+    margin: auto; 
+    padding: 10px 20px;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    gap: 12px;
+}
+
+/* --- Logo Section --- */
+.logo { display: flex; align-items: center; gap: 12px; }
+
+.logo img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid var(--gold);
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.logo:hover img {
+    transform: rotate(10deg) scale(1.1);
+}
+
+.logo-text h1 {
+    font-size: 18px;
+    color: var(--gold);
+    margin: 0;
+    line-height: 1;
+    letter-spacing: 1px;
+}
+
+.logo-text span {
+    font-size: 11px;
+    color: var(--gold-light);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* --- Navbar Desktop --- */
+.navbar { display: flex; gap: 5px; align-items: center; }
+
+.navbar a { 
+    text-decoration: none; 
+    color: var(--gold-light); 
+    font-size: 15px; 
+    padding: 8px 15px;
+    position: relative;
+    transition: var(--transition);
+}
+
+/* Hover Effect: เส้นใต้เรืองแสง */
+.navbar a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--gold);
+    transition: var(--transition);
+    transform: translateX(-50%);
+}
+
+.navbar a:hover {
+    color: var(--gold);
+}
+
+.navbar a:hover::after {
+    width: 70%;
+}
+
+/* ปุ่มออกจากระบบ */
+.logout-btn {
+    background: var(--gold) !important;
+    color: #000 !important;
+    border-radius: 20px;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+.logout-btn::after { display: none; } /* ปิดเส้นใต้ */
+
+.logout-btn:hover {
+    background: #fff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(212, 175, 55, 0.4);
+}
+
+.logout-btn:active { transform: scale(0.95); }
+
+/* --- Mobile Menu Toggle --- */
+.menu-toggle { display: none; flex-direction: column; gap: 6px; cursor: pointer; padding: 5px; }
+.menu-toggle span { width: 28px; height: 3px; background: var(--gold); border-radius: 3px; transition: 0.4s; }
+
+/* --- Responsive (Mobile/Tablet) --- */
+@media (max-width: 850px) {
+    .menu-toggle { display: flex; z-index: 1001; }
+
+    .header-content { max-width: 100%; width: 100%; padding: 10px 12px; }
+    .navbar {
+        position: fixed;
+        inset: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(21, 21, 21, 0.98); /* Glassmorphism look */
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        padding: 100px 20px;
+        transition: transform 0.45s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+        border-left: 1px solid rgba(212, 175, 55, 0.3);
+        box-shadow: -10px 0 20px rgba(0,0,0,0.5);
+        z-index: 1000;
+        transform: translateX(105%); /* hide off-canvas by default */
+        pointer-events: none; /* avoid blocking page when hidden */
+        opacity: 0;
+    }
+
+    .navbar.active {
+        transform: translateX(0);
+        pointer-events: auto;
+        opacity: 1;
+    }
+
+    .navbar a { 
+        width: 100%; 
+        font-size: 18px;
+        padding: 15px 0;
+        text-align: left;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .navbar a:hover { padding-left: 10px; }
+    .navbar a::after { display: none; }
+
+    .logout-btn {
+        margin-top: 30px;
+        text-align: center !important;
+        margin-left: 0;
+    }
+
+    /* Animation Hamburger */
+    .menu-toggle.open span:nth-child(1) { transform: rotate(-45deg) translate(-6px, 6px); }
+    .menu-toggle.open span:nth-child(2) { opacity: 0; transform: translateX(20px); }
+    .menu-toggle.open span:nth-child(3) { transform: rotate(45deg) translate(-6px, -7px); }
+}
+
+@media (max-width: 850px) {
+    .header-content { padding: 10px 16px; }
+    .logo img { width: 40px; height: 40px; }
+    .logo-text h1 { font-size: 16px; }
+    .logo-text span { font-size: 10px; letter-spacing: 1.5px; }
+
+    /* Ensure user menu fits nicely inside slide-out nav */
+    .navbar .user-menu { width: 100%; }
+    .navbar .user-toggle { width: 100%; justify-content: space-between; }
+    .navbar .user-dropdown {
+        position: relative;
+        top: 0;
+        right: 0;
+        width: 100%;
+        margin-top: 10px;
+        box-shadow: none;
+        border-left: none;
+        border-right: none;
+    }
+    .navbar .user-dropdown a { padding: 12px 0; }
+}
+
+@media (max-width: 600px) {
+    .header-content { padding: 10px 12px; }
+    .logo { gap: 10px; }
+    .logo-text h1 { font-size: 15px; }
+    .logo-text span { font-size: 9px; letter-spacing: 1.2px; }
+    .navbar a { font-size: 16px; }
+    .menu-toggle span { width: 26px; }
+}

@@ -1,0 +1,87 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #111; /* ดำ */
+    color: #f5f5f5;
+}
+
+/* header */
+.header {
+    background: linear-gradient(90deg, #1a1a1a, #3b2a1e);
+    padding: 15px 30px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo h1 {
+    color: #c8a27c; /* น้ำตาลทอง */
+}
+
+/* menu */
+.menu a {
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.menu button {
+    background: #3b2a1e;
+    color: #fff;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.menu button:hover {
+    background: #6b4b33;
+}
+
+/* container */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    padding: 40px;
+}
+
+/* card */
+.card {
+    background: #1c1c1c;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    transition: 0.3s;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(200,162,124,0.4);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card p {
+    margin: 8px 0;
+    color: #d2b48c;
+    font-weight: bold;
+}
+
+/* footer */
+footer {
+    background: #1a1a1a;
+    text-align: center;
+    padding: 20px;
+    color: #aaa;
+}
+@media (max-width: 480px) { body { font-size: 14px; } .card p { font-size: 16px; } button { font-size: 15px; }}

@@ -1,0 +1,306 @@
+    body {
+        font-family: 'Segoe UI', Tahoma, sans-serif;
+        background: linear-gradient(135deg, #f3e7d3, #e9dcc9);
+        margin: 0;
+        padding: 0;
+    }
+
+    .box {
+        background: #fffaf3;
+        padding: 25px;
+        max-width: 850px;
+        margin: 40px auto;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    h2 {
+        color: #6b4f2c;
+        margin-bottom: 10px;
+    }
+
+    h3 {
+        color: #8b5e34;
+        margin-top: 20px;
+    }
+
+    label {
+        color: #5c4631;
+        font-weight: bold;
+    }
+
+    input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin-top: 6px;
+        border-radius: 6px;
+        border: 1px solid #cbb79f;
+        font-size: 16px;
+        background: #fff;
+    }
+
+    button {
+        margin-top: 12px;
+        padding: 10px 20px;
+        background: #8b5e34;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+    button:hover {
+        background: #6b4f2c;
+    }
+
+    .current {
+        background: #efe2cf;
+        padding: 12px;
+        border-left: 6px solid #8b5e34;
+        border-radius: 6px;
+        margin-bottom: 15px;
+        color: #5c4631;
+        font-weight: bold;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+        background: #fff;
+    }
+
+    th, td {
+        border: 1px solid #e0d3bf;
+        padding: 10px;
+        text-align: center;
+        font-size: 15px;
+    }
+
+    th {
+        background: #d8c3a5;
+        color: #4b3621;
+    }
+
+    tr:nth-child(even) {
+        background: #f8f2ea;
+    }
+
+    .pending {
+        color: #c47a2c;
+        font-weight: bold;
+    }
+
+    .processing {
+        color: #3c7a3c;
+        font-weight: bold;
+    }
+
+    .done {
+        color: #888;
+    }
+
+    hr {
+        border: none;
+        height: 1px;
+        background: #d6c6b0;
+        margin: 20px 0;
+    }
+
+    .error {
+        color: #b00020;
+        font-weight: bold;
+    }
+/* ===== Search Form ===== */
+.search-form {
+    max-width: 420px;
+    margin: 30px auto;
+    padding: 25px;
+    background: #FFFDF9;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(74,59,44,0.15);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.search-form label {
+    font-weight: 600;
+    color: #6B4F2C;
+    font-size: 15px;
+}
+
+/* ===== Input ===== */
+.search-form input {
+    padding: 12px 14px;
+    border-radius: 999px;
+    border: 1.5px solid #D4AF37;
+    font-size: 15px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.search-form input:focus {
+    border-color: #C8A32D;
+    box-shadow: 0 0 0 3px rgba(212,175,55,0.25);
+}
+
+/* ===== Buttons ===== */
+.form-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.form-actions button {
+    flex: 1;
+}
+
+/* ===== Back Link ===== */
+.back-link {
+    flex: 1;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 999px;
+    font-weight: 600;
+    color: #6B4F2C;
+    background: #EFE6DA;
+    transition: all 0.3s ease;
+}
+
+.back-link:hover {
+    background: #E0D3C1;
+    color: #2F2318;
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 480px) {}   /* มือถือ */
+@media (max-width: 768px) {}   /* แท็บเล็ต */
+@media (max-width: 1024px) {}  /* โน้ตบุ๊ก */
+/* ===== Reset ===== */
+* {
+    box-sizing: border-box;
+}
+
+/* ===== Body ===== */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: #F7F2EC;
+    color: #6B4F2C;
+}
+
+/* ===== Container ===== */
+.box {
+    max-width: 1000px;
+    margin: 20px auto;
+    background: #FFFDF9;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+/* ===== Form ===== */
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+form label {
+    width: 100%;
+    font-weight: 600;
+}
+
+form input {
+    flex: 1;
+    min-width: 200px;
+    padding: 12px 14px;
+    border-radius: 999px;
+    border: 1px solid #d6c6a5;
+    font-size: 15px;
+}
+
+form button,
+form a {
+    padding: 12px 20px;
+    border-radius: 999px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* ===== Button ===== */
+form button {
+    border: none;
+    background: linear-gradient(135deg, #F5E3A1, #D4AF37);
+    color: #000;
+    cursor: pointer;
+}
+
+/* ===== Back link ===== */
+form a {
+    background: #4A3B2C;
+    color: #fff;
+}
+
+/* ===== Table ===== */
+.table-wrap {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    background: #F5E3A1;
+}
+
+/* ===== Status ===== */
+.pending { color: orange; }
+.processing { color: green; }
+.done { color: gray; }
+
+/* ===== Mobile ===== */
+@media (max-width: 600px) {
+
+    .box {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    form {
+        flex-direction: column;
+    }
+
+    form input,
+    form button,
+    form a {
+        width: 100%;
+    }
+
+    table {
+        font-size: 14px;
+    }
+}
+
+/* ===== Tablet ===== */
+@media (max-width: 1024px) {
+    .box {
+        margin: 15px;
+    }
+}
+
+

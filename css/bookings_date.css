@@ -1,0 +1,231 @@
+/* ===== พื้นหลัง + ฟอนต์รวม ===== */
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont,
+                 "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    background: radial-gradient(circle at top, #1a1a1a, #0b0b0b 70%);
+    padding: 25px;
+    color: #d4af37;
+}
+
+/* ===== หัวข้อ ===== */
+h2 {
+    color: #f0d77b;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+/* ===== ฟอร์มเลือกวัน ===== */
+form {
+    background: linear-gradient(145deg, #1b1b1b, #121212);
+    padding: 16px 20px;
+    border-radius: 14px;
+    border: 1px solid rgba(212,175,55,0.5);
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02);
+    margin-bottom: 20px;
+}
+
+label {
+    color: #f0d77b;
+    margin-right: 8px;
+}
+
+input[type="date"] {
+    background: #0e0e0e;
+    border: 1px solid #c9a24d;
+    color: #f0d77b;
+    padding: 6px 12px;
+    border-radius: 8px;
+}
+
+/* ===== ปุ่ม ===== */
+button {
+    margin-left: 10px;
+    padding: 7px 18px;
+    border-radius: 10px;
+    border: 1px solid #c9a24d;
+    background: linear-gradient(145deg, #d4af37, #b8962e);
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    filter: brightness(1.08);
+}
+
+/* ===== กล่องสรุป ===== */
+.summary {
+    background: linear-gradient(145deg, #1b1b1b, #141414);
+    border-radius: 16px;
+    padding: 18px 22px;
+    margin-bottom: 25px;
+    font-size: 18px;
+    color: #f0d77b;
+    border-left: 6px solid #d4af37;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+}
+
+/* =========================
+   ตาราง (BLACK & GOLD)
+========================= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #0b0b0b;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.7);
+}
+
+/* ===== หัวตาราง ===== */
+thead th {
+    background: linear-gradient(145deg, #d4af37, #b8962e);
+    color: #000;
+    padding: 14px;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+/* ===== แถวข้อมูล ===== */
+tbody tr {
+    background: #0f0f0f;
+}
+
+tbody tr:nth-child(even) {
+    background: #141414;
+}
+
+tbody td {
+    padding: 14px;
+    text-align: center;
+    color: #d4af37;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Hover */
+tbody tr:hover {
+    background: rgba(212,175,55,0.15);
+    transition: 0.2s ease;
+}
+
+/* ราคา */
+td:nth-child(6) {
+    color: #ffd966;
+    font-weight: bold;
+}
+
+/* สถานะ */
+td:last-child {
+    color: #f0d77b;
+    font-weight: bold;
+}
+
+/* ไม่มีข้อมูล */
+tbody tr td[colspan] {
+    padding: 35px;
+    color: #bfa94a;
+    background: #0d0d0d;
+    font-size: 16px;
+}
+
+/* มุมโค้งหัวตาราง */
+thead th:first-child {
+    border-top-left-radius: 18px;
+}
+thead th:last-child {
+    border-top-right-radius: 18px;
+}
+.btn-clear {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 6px 12px;
+    background: #ccc;
+    color: #000;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.btn-clear:hover {
+    background: #999;
+}
+
+/* ===== Responsive tweaks ===== */
+@media (max-width: 1024px) {
+    body {
+        padding: 18px;
+    }
+    form {
+        padding: 14px 16px;
+    }
+    thead th,
+    tbody td {
+        padding: 12px;
+        font-size: 13px;
+    }
+    .summary {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 14px;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: stretch;
+    }
+    label {
+        margin-right: 0;
+    }
+    input[type="date"] {
+        width: 100%;
+    }
+    button {
+        width: 100%;
+        margin-left: 0;
+    }
+    table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+    }
+    thead th,
+    tbody td {
+        padding: 12px 10px;
+        font-size: 12.5px;
+    }
+    .summary {
+        font-size: 16px;
+        padding: 16px 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    h2 {
+        font-size: 18px;
+    }
+    form {
+        padding: 12px;
+    }
+    input[type="date"],
+    button {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+    thead th,
+    tbody td {
+        padding: 10px 8px;
+        font-size: 12px;
+    }
+    .summary {
+        font-size: 15px;
+    }
+}

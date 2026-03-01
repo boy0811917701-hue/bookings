@@ -1,0 +1,116 @@
+/* ===== Reset ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+
+/* ===== Navbar ===== */
+nav {
+    background: #403738;
+    height: 70px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header {
+    max-width: 1200px;
+    margin: auto;
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+}
+
+/* ===== Logo ===== */
+.nameWeb {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nameWeb img {
+    border-radius: 50%;
+}
+
+.nameWeb h1 {
+    font-size: 20px;
+    color: #fff;
+}
+
+/* ===== Menu ===== */
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 8px;
+}
+
+.menu li a {
+    display: block;
+    padding: 10px 14px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: background 0.3s ease;
+}
+
+/* hover */
+.menu li a:hover {
+    background: rgba(255, 255, 255, 0.35);
+}
+
+/* active */
+.menu li a.active {
+    background: #ffffff;
+    color: #403738;
+}
+
+/* logout */
+.menu li a.logout {
+    color: #ffd1d1;
+}
+
+/* ===== Mobile Toggle ===== */
+.menu-toggle {
+    display: none;
+    font-size: 26px;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #403738;
+        flex-direction: column;
+        display: none;
+    }
+
+    .menu.show {
+        display: flex;
+    }
+
+    .menu li a {
+        padding: 14px;
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+        text-align: center;
+    }
+
+    .nameWeb h1 {
+        font-size: 16px;
+    }
+}

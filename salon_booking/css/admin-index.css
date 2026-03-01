@@ -1,0 +1,206 @@
+/* ===== Reset ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Kanit", Arial, sans-serif;
+}
+
+body {
+    background-color: #f5f3ef;
+    color: #2e2e2e;
+}
+
+/* ===== Container ===== */
+.container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+/* ===== Titles ===== */
+h2 {
+    color: #4b3621;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: #6f4e37;
+}
+
+/* ===== Card ===== */
+.bg-white {
+    background: #ffffff;
+}
+
+.rounded-2xl {
+    border-radius: 14px;
+}
+
+.shadow-lg {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== Search ===== */
+form {
+    display: flex;
+    gap: 10px;
+}
+
+form input[type="text"] {
+    flex: 1;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1.8px solid #c8b6a6;
+    font-size: 14px;
+}
+
+form input[type="text"]:focus {
+    outline: none;
+    border-color: #6f4e37;
+}
+
+form button {
+    padding: 12px 26px;
+    background: #6f4e37;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #4b3621;
+}
+
+/* ===== Tables ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+thead {
+    background-color: #6f4e37;
+    color: #ffffff;
+}
+
+thead th {
+    padding: 14px;
+    text-align: left;
+    font-weight: 500;
+}
+
+tbody td {
+    padding: 14px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+}
+
+tbody tr:hover {
+    background-color: #f2ece6;
+}
+
+td strong {
+    color: #4b3621;
+}
+
+/* ===== Status Badge ===== */
+.status-badge {
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    display: inline-block;
+}
+
+.status-pending {
+    background: #efe1d1;
+    color: #6f4e37;
+}
+
+.status-completed {
+    background: #d8ead6;
+    color: #2f5d2f;
+}
+
+.status-cancelled {
+    background: #f1d0d0;
+    color: #7a1f1f;
+}
+
+/* ===== Action Link ===== */
+td a {
+    color: #6f4e37;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+td a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Back Button ===== */
+.back-wrapper {
+    margin-top: 35px;
+    text-align: center;
+}
+
+.btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 32px;
+    background-color: #ffffff;
+    color: #6f4e37;
+    border: 2px solid #6f4e37;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+.btn-back:hover {
+    background-color: #6f4e37;
+    color: #ffffff;
+    transform: translateX(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* ===== Empty ===== */
+td[colspan] {
+    color: #777;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    table, thead, tbody, tr, td {
+        display: block;
+        width: 100%;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tr {
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        background: #fff;
+    }
+
+    td {
+        border: none;
+        padding: 10px 12px;
+    }
+}
+.booking-table a{
+    text-decoration: none;
+    color: #ffffff;
+}

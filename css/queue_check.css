@@ -1,0 +1,206 @@
+/* 1. Global Reset & Body */
+* {
+    box-sizing: border-box;
+    font-family: 'Prompt', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #0a0a0a;
+    color: #eee;
+    line-height: 1.6;
+}
+
+/* 2. Main Container Box - จัดให้อยู่กลางจอ */
+.box {
+    max-width: 900px;
+    margin: 40px auto;
+    background: #151515;
+    padding: clamp(20px, 5vw, 40px);
+    border-radius: 24px;
+    border: 1px solid #222;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+    width: 92%;
+    display: flex; /* ใช้ Flex เพื่อคุมเนื้อหาภายใน */
+    flex-direction: column;
+    align-items: center; /* จัดเนื้อหาในกล่องให้อยู่กึ่งกลาง */
+}
+
+/* 3. Typography */
+h2 {
+    width: 100%;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: clamp(24px, 6vw, 32px);
+    font-weight: 700;
+    background: linear-gradient(45deg, #d4af37, #fdfc97);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.box p {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #aaa;
+}
+
+/* 4. Current Serving - คิวปัจจุบัน */
+.current {
+    width: 100%;
+    max-width: 400px; /* คุมความกว้างไม่ให้แผ่เกินไป */
+    background: rgba(212, 175, 55, 0.08);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    padding: 20px;
+    border-radius: 16px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.current strong {
+    font-size: 24px;
+    display: block;
+    color: #fdfc97;
+    margin-top: 5px;
+}
+
+/* 5. Search Form */
+.search-form {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input[type="text"] {
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px solid #333;
+    background: #0d0d0d;
+    color: #fff;
+    font-size: 16px;
+    width: 100%;
+    text-align: center; /* พิมพ์ชื่อตรงกลาง */
+}
+
+/* 6. Buttons & Actions */
+.form-actions {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+}
+
+button {
+    flex: 2;
+    padding: 16px;
+    border-radius: 12px;
+    border: none;
+    background: linear-gradient(45deg, #d4af37, #b8860b);
+    color: #000;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.back-link {
+    flex: 1;
+    text-align: center;
+    padding: 16px;
+    border-radius: 12px;
+    background: #222;
+    text-decoration: none;
+    color: #aaa;
+    border: 1px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 7. Responsive Table Setup - แก้ไขให้กึ่งกลาง */
+.table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    margin: 30px 0;
+    border-radius: 16px;
+    border: 1px solid #222;
+    background: #111;
+    -webkit-overflow-scrolling: touch;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 650px; /* ล็อคความกว้างขั้นต่ำเพื่อไม่ให้เบียดกัน */
+}
+
+th, td {
+    padding: 18px 15px;
+    text-align: center; /* บังคับเนื้อหาในตารางอยู่กึ่งกลาง */
+    border-bottom: 1px solid #222;
+    white-space: nowrap;
+}
+
+th {
+    background: #1a1a1a;
+    color: #d4af37;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* 8. Mobile Adjustments (iPhone / Galaxy) */
+@media (max-width: 768px) {
+    .box {
+        margin: 20px auto;
+        width: 95%;
+    }
+
+    .form-actions {
+        flex-direction: column; /* เรียงปุ่มแนวตั้ง */
+    }
+
+    button, .back-link {
+        width: 100%;
+        padding: 18px;
+    }
+
+    /* ในมือถือ ให้ตารางชิดซ้ายเพื่อให้เลื่อนดูได้ถนัด */
+    table {
+        margin: 0;
+    }
+}
+
+/* สถานะสี */
+.pending { color: #ff9800; font-weight: bold; }
+.processing { color: #2196f3; font-weight: bold; }
+.confirmed { color: #4caf50; font-weight: bold; }
+
+
+.table-wrap {
+    width: 100%;
+    overflow-x: auto; /* ให้เลื่อนซ้าย-ขวาได้ในมือถือ */
+    margin: 20px 0;
+    border-radius: 12px;
+    border: 1px solid #222;
+}
+
+table {
+    width: 100%;
+    min-width: 600px; /* ป้องกันตารางบีบจนตัวหนังสือซ้อนกัน */
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 15px 10px;
+    text-align: center; /* จัดตัวหนังสือให้อยู่ตรงกลางทุกช่อง */
+    border-bottom: 1px solid #222;
+}
+
+/* ปรับสีสถานะตามรูปภาพ */
+.pending {
+    color: #ff9800;
+    font-weight: bold;
+    text-transform: uppercase;
+}

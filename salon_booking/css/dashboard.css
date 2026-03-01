@@ -1,0 +1,146 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #f5f3ef;
+}
+.summary-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.summary-card {
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+    color: #1a1717;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.summary-title {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.summary-number {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.summary-unit {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* สีแต่ละ block */
+.summary-card.pink {
+    background-color: #FFE4B5;
+}
+
+.summary-card.rose {
+    background-color: #FFE4B5;
+}
+
+.summary-card.orange {
+    background-color: #FFE4B5;
+}
+h2{
+    text-align: center;
+    color: #4b3621;
+}
+/* ===== Date Control ===== */
+.date-control {
+    margin: 25px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.date-form {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    background: #ffffff;
+    padding: 12px 18px;
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.date-input {
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+
+.btn {
+    padding: 8px 14px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+/* ปุ่มวันนี้ */
+.btn-today {
+    background: #4f46e5;
+    color: #fff;
+}
+.btn-today:hover {
+    background: #4338ca;
+}
+
+/* ปุ่มดูข้อมูล */
+.btn-view {
+    background: #16a34a;
+    color: #fff;
+}
+.btn-view:hover {
+    background: #15803d;
+}
+
+/* ปุ่มก่อนหน้า / ถัดไป */
+.btn-nav {
+    background: #f1f5f9;
+    color: #333;
+}
+.btn-nav:hover {
+    background: #e2e8f0;
+}
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    .date-form {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+    }
+
+    .btn,
+    .date-input {
+        width: 100%;
+        text-align: center;
+    }
+}
+.chart-wrapper {
+    display: flex;
+    justify-content: center; /* กลางแนวนอน */
+    width: 100%;
+   
+}
+
+.chart-container {
+    max-width: 420px;
+    width: 100%;
+}
+
+/* มือถือ */
+@media (max-width: 768px) {
+    .chart-container {
+        max-width: 300px;
+    }
+}
+
